@@ -1,0 +1,42 @@
+
+from collections import deque
+
+start = (1, 2, 3, 4, 0, 6, 7, 5, 8)
+goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
+
+queue = deque([(start, [])])
+visited = {start}
+
+while queue:
+    state, path = queue.popleft()
+
+    if state == goal:
+        for s in path + [state]:
+            print(s[0:3])
+            print(s[3:6])
+            print(s[6:9])
+            print()
+        break
+
+    zero = state.index(0)
+    moves = []
+
+    if zero >= 3:
+        moves.append(zero - 3)
+    if zero < 6:
+        moves.append(zero + 3)
+    if zero % 3 != 0:
+        moves.append(zero - 1)
+    if zero % 3 != 2:
+        moves.append(zero + 1)
+
+    for pos in moves:
+        new_state = list(state)
+        new_state[zero], new_state[pos] = new_state[pos], new_state[zero]
+        new_state = tuple(new_state)
+
+        if new_state not in visited:
+            visited.add(new_state)
+            queue.append((new_state, path + [state]))
+else:
+    print("No solution found")

@@ -1,0 +1,26 @@
+
+from collections import deque
+
+start = (0, 0)
+queue = deque([start])
+visited = {start}
+
+while queue:
+    a, b = queue.popleft()
+    print("Jug 1:", a, "Jug 2:", b)
+
+    if a == 2 or b == 2:
+        print("Goal reached")
+        break
+
+    moves = [
+        (4, b), (a, 3),
+        (0, b), (a, 0),
+        (a - min(a, 3 - b), b + min(a, 3 - b)),
+        (a + min(b, 4 - a), b - min(b, 4 - a))
+    ]
+
+    for state in moves:
+        if state not in visited:
+            visited.add(state)
+            queue.append(state)

@@ -1,0 +1,19 @@
+
+room = {"A": "Dirty", "B": "Dirty"}
+location = "A"
+
+while True:
+    print("Vacuum at room", location)
+
+    if room[location] == "Dirty":
+        room[location] = "Clean"
+        print("Room", location, "cleaned")
+
+    if location == "A":
+        location = "B"
+    else:
+        location = "A"
+
+    if room["A"] == "Clean" and room["B"] == "Clean":
+        print("All rooms are clean")
+        break
