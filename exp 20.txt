@@ -1,0 +1,23 @@
+
+planets = {
+    "Mercury": 1,
+    "Venus": 2,
+    "Earth": 3,
+    "Mars": 4,
+    "Jupiter": 5,
+    "Saturn": 6,
+    "Uranus": 7,
+    "Neptune": 8
+}
+
+name = input("Enter planet name: ").capitalize()
+
+if name in planets:
+    print("Position from Sun:", planets[name])
+
+    if planets[name] <= 4:
+        print("Type: Inner planet")
+    else:
+        print("Type: Outer planet")
+else:
+    print("Planet not found")

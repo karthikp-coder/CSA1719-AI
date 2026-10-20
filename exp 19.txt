@@ -1,0 +1,26 @@
+
+student = {
+    "Arun": ("T101", "CS101"),
+    "Bala": ("T102", "CS102"),
+    "Kumar": ("T101", "CS103")
+}
+
+teacher = {
+    "T101": "Ravi",
+    "T102": "Priya"
+}
+
+subject = {
+    "CS101": "Python",
+    "CS102": "Java",
+    "CS103": "AI"
+}
+
+name = input("Enter student name: ")
+
+if name in student:
+    tcode, scode = student[name]
+    print("Teacher:", teacher[tcode])
+    print("Subject:", subject[scode])
+else:
+    print("Student not found")

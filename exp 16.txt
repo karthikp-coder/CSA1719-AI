@@ -1,0 +1,19 @@
+
+import numpy as np
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))
+
+inputs = np.array([[0.5, 0.8]])
+
+w1 = np.array([[0.2, 0.4],
+               [0.3, 0.5]])
+
+w2 = np.array([[0.6],
+               [0.7]])
+
+hidden = sigmoid(np.dot(inputs, w1))
+output = sigmoid(np.dot(hidden, w2))
+
+print("Hidden layer:", hidden)
+print("Output:", output)

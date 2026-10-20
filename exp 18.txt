@@ -1,0 +1,13 @@
+
+person = {
+    "Arun": "2002-05-10",
+    "Bala": "2003-08-15",
+    "Kumar": "2001-12-20"
+}
+
+name = input("Enter name: ")
+
+if name in person:
+    print("Date of Birth:", person[name])
+else:
+    print("Person not found")
