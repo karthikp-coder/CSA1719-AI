@@ -1,0 +1,13 @@
+
+def decision_tree(weather):
+    if weather == "Sunny":
+        return "No"
+    elif weather == "Rainy":
+        return "Yes"
+    else:
+        return "Invalid weather"
+
+weather = input("Enter weather (Sunny/Rainy): ")
+result = decision_tree(weather)
+
+print("Play decision:", result)
